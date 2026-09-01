@@ -1,0 +1,3 @@
+# Certificate for `E_star(0) > 1.73639`
+
+Requirements: C++17 with OpenMP, GMP, and MPFR 4.x (`libmpfr` ABI 6). Run `./run_verifier.sh`. The script checks all proof-relevant JSON/C++ metadata, builds with `-DNDEBUG` and without fast-math, runs mandatory NTT/CRT startup tests, and executes all 68 backward stages. The reference script uses five OpenMP threads by default; set `OMP_NUM_THREADS` to override it. Successful execution ends with `PASS: E_star > 173639/100000`. The verifier uses one-sided MPFR rounding and exact integer NTT/CRT convolution; search code is not trusted. See Appendix E.2 of the manuscript.
